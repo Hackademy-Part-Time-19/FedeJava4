@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java4Fede</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+        let contoCorrente = 2000;
+        let operazione;
+
+        while (operazione != 0) {
+
+           operazione = parseInt(prompt("Buongiorno Benvenuto in Banca Centrale. \n\nPremi 1 per fare bonifico\n\nPremi 2 per fare prelievo\n\nPremi 0 per uscire"))
+
+           let importo;
+
+            switch (operazione) {
+                case 1:
+                importo = parseInt(prompt("Inserisci l'importo dell'operazione"))
+                    if (contoCorrente - importo >= 0) {
+                        let iban = prompt("Inserisca l'IBAN del destinatario: ")
+                        contoCorrente = contoCorrente - importo;
+
+                        alert("Il bonifico è andato a buon fine a queste coordinate" + iban + " Grazie mille per aver scelto Banca Centrale")
+                        alert("Il tuo saldo a seguito dell'operazione è di: " + contoCorrente + " €")
+                    } else {
+                        alert("Sei povero")
+                    }
+
+
+                    break;
+
+                    case 2:
+                    importo = parseInt(prompt("Inserisci l'importo dell'operazione"))
+                    if (contoCorrente - importo >= 0) {
+                        let iban = prompt("Il prelievo è andato a buon fine, Grazie per aver scelto Banca Centrale. Arrivederci ")
+                        contoCorrente = contoCorrente - importo;
+
+                        alert("Il bonifico è andato a buon fine a queste coordinate" + iban + " Grazie mille per aver scelto Banca Centrale")
+                        alert("Il tuo saldo a seguito dell'operazione è di: " + contoCorrente + " €")
+                    } else {
+                        alert("Sei povero")
+                    }
+
+                    break;
+
+                    case 0:
+                    alert("Il tuo saldo attuale è di: " + contoCorrente + " €")
+                    alert("Grazie mille per aver scelto Banca Centrale. Arrivederci e a presto")
+
+                    break;
+
+            }
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
